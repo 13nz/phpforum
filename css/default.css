@@ -1,0 +1,106 @@
+/*  DEFAULT  */
+
+label {
+  color: white;
+}
+
+
+.butlink {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+
+/*  #201a34  */
+ #header {
+   background: #201a34;
+ }
+
+ .op, .reply {
+     border: 2px solid #201a34;
+ }
+
+ .avi, .av {
+   border: 1px solid #201a34;
+ }
+
+
+
+/*  #352f48  */
+ body {
+   background: #352f48;
+ }
+
+
+ /*  #b7b2c5  */
+.tbody, .inputbg, .replybody, tbody  {
+    background: #b7b2c5;
+  }
+
+ .ophead, .cardhead, .butt, thead {
+  background:#4d426d;
+   color: #b7b2c5;
+ }
+
+ .thead {
+      color: #4d426d;
+ }
+
+
+
+/*  #201A34  */
+footer {
+  background: #201a34;
+}
+
+
+
+/*  #847c9c  */
+ .opbody {
+   background: #847c9c;
+ }
+
+
+/*  #9087aa  */
+ .replyprofile, .cardbody {
+   background:#9087aa;
+ }
+
+
+/*  #d3c5fb  */
+ #logo {
+     color: #d3c5fb;
+ }
+
+
+/*  #b7b2c5  */
+ .nav, .nav-item, .nav-link, .oplink {
+     text-decoration: none !important;
+     color: #b7b2c5 !important;
+ }
+
+
+/*  #4d426d  */
+ .menustyle {
+   background: #4d426d;
+ }
+
+
+
+/*  #463159  */
+ .catlink {
+   text-decoration: none !important;
+   color: #463159 !important;
+ }
+
+
+
+/*  #5d5577  */
+ .opprofile {
+     background: #5d5577;
+ }
+
+ ol > li, .breadlink {
+   text-decoration: none;
+   color: #8C8896 !important;
+ }

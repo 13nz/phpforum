@@ -1,0 +1,105 @@
+/*  DEFAULT  */
+
+label {
+  color: white;
+}
+
+
+.butlink {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+
+/*  #355070  */
+ #header {
+   background: #355070;
+ }
+
+ .op, .reply {
+     border: 2px solid #355070;
+ }
+
+ .avi, .av {
+   border: 1px solid #355070;
+ }
+
+
+
+/*  #515575  */
+ body {
+   background: #515575;
+ }
+
+
+ /*  #EFC1A9  */
+.tbody, .inputbg, .replybody, tbody  {
+    background: #EFC1A9;
+  }
+
+ .ophead, .cardhead, .butt, thead {
+  background:#CC6672;
+   color: #EFC1A9;
+ }
+
+ .thead {
+      color: #885970;
+ }
+
+
+
+/*  #201A34  */
+footer {
+  background: #355070;
+}
+
+
+
+/*  #BD7585  */
+ .opbody {
+   background: #EDA297;
+ }
+
+
+/*  #EA8689  */
+ .replyprofile, .cardbody {
+   background:#ECB598;
+ }
+
+
+/*  #E88C7D  */
+ #logo {
+     color: #E88C7D;
+ }
+
+
+/*  #EFC1A9  */
+ .nav, .nav-item, .nav-link, .oplink {
+     text-decoration: none !important;
+     color: #EFC1A9 !important;
+ }
+
+
+/*  #885970  */
+ .menustyle {
+   background: #7F5C79;
+ }
+
+
+
+/*  #695676  */
+ .catlink {
+   text-decoration: none !important;
+   color: #695676 !important;
+ }
+
+
+
+/*  #5d5577  */
+ .opprofile {
+     background: #EA8588;
+ }
+
+ ol > li, .breadlink {
+   color: #8C8896 !important;
+ }

@@ -1,0 +1,118 @@
+/*  DUST  */
+
+label {
+  color: white;
+}
+
+
+.butlink {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+
+/*  #6d6875  */
+ #header {
+   background: #6d6875;
+ }
+
+ .op, .reply {
+     border: 2px solid #6d6875;
+ }
+
+ .avi, .av {
+   border: 1px solid #6d6875;
+ }
+
+
+
+
+/*  #917681  */
+ body {
+   background: #917681;
+ }
+
+
+ /*  #b5838d  */
+.tbody, .inputbg, .replybody, tbody  {
+    background: #b5838d;
+  }
+/*
+  .navbar {
+    color: #b5838d !important;
+  }
+  */
+
+ .ophead, .cardhead, .butt, thead {
+  background:#cd8e94;
+   color: #323036;
+ }
+
+.thead {
+     color: #323036;
+}
+
+/*  #2d283e  */
+footer {
+  background: #6d6875;
+}
+
+
+
+/*  #e5989b  */
+ .opbody {
+   background: #e5989b;
+ }
+
+
+/*  #f2a69f  */
+ .replyprofile, .cardbody {
+   background:#f2a69f;
+ }
+
+
+/*  #ffb4a2  */
+ #logo {
+     color: #ffb4a2;
+ }
+
+
+/*  #b5838d  */
+ .nav-link, .oplink {
+     text-decoration: none !important;
+     color: #3C3A41 !important;
+ }
+
+
+/*  #cd8e94  */
+ .menustyle {
+   background: #cd8e94;
+ }
+
+
+
+/*  #b5838d  */
+ .navbut, .catlink {
+   text-decoration: none !important;
+   color: #45363C !important;
+ }
+
+
+
+/*  #ffcdb2  */
+
+
+button {
+   color: #FFFFFF !important;
+
+ }
+
+ ol > li, .breadlink {
+   color: #FFE1D6 !important;
+ }
+
+
+/*  #F2B5A0  */
+ .opprofile {
+     background: #CD8E94;
+ }
