@@ -1,4 +1,5 @@
 <?php
+require("db.php");
 
 
 function register($user) {
@@ -45,21 +46,7 @@ function logout() {
 };
 
 
-function connectToDB() {
-  $servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "forum_db";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-	if ($conn->connect_error) {
-	  die("Connection failed: " . $conn->connect_error);
-	}
-
-	return $conn;
-};
 
 
 function selectFromDb($sql, $asObject) {
