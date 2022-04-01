@@ -1,7 +1,7 @@
 <?php
 
 function connectToDB() {
-  $ini = parse_ini_file("config.ini");
+  // $ini = parse_ini_file("config.ini");
 
   $servername = getenv('HOST');
 	$username = getenv('USERNAME');
