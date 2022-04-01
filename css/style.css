@@ -109,10 +109,15 @@ img{
    border-radius: 5%;
 }
 
+.truncate {
+  width: 8vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
-
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
    #logo {
      font-size: 10vw;
    }
@@ -129,7 +134,7 @@ img{
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #logo {
     font-size:6vw;
   }
@@ -146,21 +151,14 @@ img{
 
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   #logo {
     font-size:5vw;
   }
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   #logo {
     font-size:5vw;
   }
-}
-
-.truncate {
-  width: 8vw;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
