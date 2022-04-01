@@ -1,5 +1,22 @@
 <?php
-require("db.php");
+
+function connectToDB() {
+  $ini = parse_ini_file("config.ini");
+
+  $servername = $ini['servername'];
+	$username = $ini['username'];
+	$password = $ini['password'];
+	$dbname = $ini['dbname'];
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+	if ($conn->connect_error) {
+	  die("Connection failed: " . $conn->connect_error);
+	}
+
+	return $conn;
+};
 
 
 function register($user) {
