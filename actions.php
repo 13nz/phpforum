@@ -66,12 +66,12 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 		$userID = $_SESSION["userID"];
 	$_SESSION["newPostMsg"] = [];
 	if (isset($_POST["title"])) {
-		$title = mysqli_real_escape_string($conn, htmlspecialchars($_POST["title"]));
+		$title = mysqli_real_escape_string($conn, $_POST["title"]);
 	} else {
 		array_push($_SESSION["newPostMsg"], "You haven't entered a title.");
 	};
 	if(isset($_POST["body"])) {
-		$body = mysqli_real_escape_string($conn, htmlspecialchars($_POST["body"]));
+		$body = mysqli_real_escape_string($conn, $_POST["body"]);
 	} else {
 		array_push($_SESSION["newPostMsg"], "No post body.");
 	};
@@ -171,7 +171,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 		$thisPage = $_GET["page"];
 	};
 	if(isset($_POST["reply"]) && $_POST["reply"] !== "") {
-		$body = mysqli_real_escape_string($conn, htmlspecialchars($_POST["reply"]));
+		$body = mysqli_real_escape_string($conn, $_POST["reply"]);
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
 			$target_dir = "images/";
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
