@@ -30,7 +30,7 @@
 
 
     <div class="row justify-content-center ophead" id="<?= $post->id ?>" style="height: auto;">
-      <h4 class=" px-1 py-1 ps-2"><?= $post->title; ?></h4>
+      <h4 class=" px-1 py-1 ps-2"><?= nl2br($post->title); ?></h4>
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-sm-12 col-md-2 col-lg-1 opprofile py-2">
@@ -57,7 +57,7 @@
           </div>
           <hr>
         </div>
-        <p class=" px-1 py-1"><?= $post->body; ?></p>
+        <p class=" px-1 py-1"><?= nl2br($post->body); ?></p>
         <!-- IF IMAGE -->
         <?php if($post->file !== NULL) { ?>
         <img src="<?= $post->file ?>" class="img-fluid">
@@ -118,7 +118,7 @@
           </div>
           <hr>
         </div>
-        <p class=" px-1 py-1"><?= $reply->body ?></p>
+        <p class=" px-1 py-1"><?= nl2br($reply->body) ?></p>
         <!-- IF IMAGE -->
         <?php if($reply->file !== "NULL") { ?>
         <img src="<?= $reply->file ?>" class="img-fluid">
