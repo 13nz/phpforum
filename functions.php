@@ -3,10 +3,10 @@
 function connectToDB() {
   $ini = parse_ini_file("config.ini");
 
-  $servername = $ini['servername'];
-	$username = $ini['username'];
-	$password = $ini['password'];
-	$dbname = $ini['dbname'];
+  $servername = $_ENV['HOST'];
+	$username = $_ENV['USERNAME'];
+	$password = $_ENV['PASSWORD'];
+	$dbname = $_ENV['DATABASE'];
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
