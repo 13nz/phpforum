@@ -190,7 +190,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
             'Key'    => $_FILES['image']['name'],
             'SourceFile' => $_FILES['image']['tmp_name'],
         ));
-			$image = "s3://phpforum/" . $_FILES["image"]["name"];
+			$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
 		};
 	} else {
 		array_push($_SESSION["replyError"], "Empty reply.");
