@@ -185,7 +185,11 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 			}
 			*/
 
-			$upload = $s3->upload('phpforum', $_FILES['image']['name'], fopen($_FILES['image']['name'], 'rb'), 'public-read');
+			$upload = $s3->putObject(array(
+            'Bucket' => "phpforum",
+            'Key'    => $_FILES['image']['name'],
+            'SourceFile' => $_FILES['file']['tmp_name'],
+        ));
 			$image = "s3://phpforum/" . $_FILES["image"]["name"];
 		};
 	} else {
