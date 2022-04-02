@@ -188,8 +188,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 			$upload = $s3->putObject(array(
             'Bucket' => "phpforum",
             'Key'    => $_FILES['image']['name'],
-            'SourceFile' => $_FILES['image']['tmp_name'],
-						'ACL'    => 'public-read'
+            'SourceFile' => $_FILES['image']['tmp_name']
         ));
 			$image = $upload['ObjectURL'];
 			//$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
