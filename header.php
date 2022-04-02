@@ -1,5 +1,8 @@
 <?php
 require_once("functions.php");
+require('vendor/autoload.php');
+
+
 
 
 if(!isset($pageTitle)) {

@@ -173,6 +173,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 	if(isset($_POST["reply"]) && $_POST["reply"] !== "") {
 		$body = mysqli_real_escape_string($conn, htmlspecialchars($_POST["reply"]));
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
+			/*
 			$target_dir = "images/";
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
 
@@ -182,6 +183,10 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 			if($image === "images/") {
 				$image = NULL;
 			}
+			*/
+
+			$upload = $s3->upload($bucket, $_FILES['image']['name'], fopen($_FILES['image']['tmp_name'], 'rb'), 'public-read');
+			$image = "s3://phpforum/" . $_FILES["image"]["name"];
 		};
 	} else {
 		array_push($_SESSION["replyError"], "Empty reply.");

@@ -1,4 +1,12 @@
 <?php
+require('vendor/autoload.php');
+
+$s3 = new Aws\S3\S3Client([
+    'version'  => 'latest',
+    'region'   => 'eu-central-1',
+]);
+
+$bucket = getenv('S3_BUCKET');//?: die('No "S3_BUCKET" config var in found in env!');
 
 function connectToDB() {
   // $ini = parse_ini_file("config.ini");
