@@ -11,7 +11,7 @@
 
 <?php if(isset($_GET["item"])) {
   $item = mysqli_real_escape_string($conn, $_GET["item"]);
-  $users = selectFromDB("SELECT * FROM users WHERE username='$item'", true);
+  $users = selectFromDB("SELECT * FROM users WHERE username LIKE '%$item%'", true);
   $posts = SelectFromDB("SELECT * FROM posts WHERE title LIKE '%$item%'", true);
   $replies = selectFromDB("SELECT * FROM replies WHERE body LIKE '%$item%'", true);
 
