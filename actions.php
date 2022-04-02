@@ -76,6 +76,7 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 		array_push($_SESSION["newPostMsg"], "No post body.");
 	};
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		/*
 		$target_dir = "images/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
 
@@ -86,6 +87,15 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 		if($image === "images/") {
 			$image = NULL;
 		}
+		*/
+
+		$upload = $s3->putObject(array(
+					'Bucket' => "phpforum",
+					'Key'    => $_FILES['image']['name'],
+					'SourceFile' => $_FILES['image']['tmp_name'],
+					'ACL' => 'public-read'
+			));
+		$image = $upload['ObjectURL'];
 	};
 	if (isset($_POST["title"]) && isset($_POST["body"])) {
 
@@ -113,6 +123,7 @@ if(isset($_GET["editprofile"]) && $_GET["editprofile"] == 'true' && isset($_GET[
 		$userID = $_SESSION["userID"];
 		$originalimage = itemFromDB("SELECT avatar FROM users WHERE id='$userID'", 'avatar');
 
+		/*
 
 		$target_dir = "images/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -124,6 +135,15 @@ if(isset($_GET["editprofile"]) && $_GET["editprofile"] == 'true' && isset($_GET[
 		if($image === "images/") {
 			$image = $originalimage;
 		}
+		*/
+
+		$upload = $s3->putObject(array(
+					'Bucket' => "phpforum",
+					'Key'    => $_FILES['image']['name'],
+					'SourceFile' => $_FILES['image']['tmp_name'],
+					'ACL' => 'public-read'
+			));
+		$image = $upload['ObjectURL'];
 
 		updateDB("UPDATE users SET avatar='$image' WHERE id='$userID'");
 
@@ -146,12 +166,22 @@ if(isset($_GET["uploadavatar"]) && $_GET["uploadavatar"] == 'true' && isset($_GE
 	if($_SERVER['REQUEST_METHOD']== 'POST') {
 		$userID = $_SESSION["userID"];
 
+		/*
 		$target_dir = "images/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
 
 		move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
 		$image = "images/" . $_FILES["image"]["name"];
+		*/
+
+		$upload = $s3->putObject(array(
+					'Bucket' => "phpforum",
+					'Key'    => $_FILES['image']['name'],
+					'SourceFile' => $_FILES['image']['tmp_name'],
+					'ACL' => 'public-read'
+			));
+		$image = $upload['ObjectURL'];
 
 		updateDB("UPDATE users SET avatar='$image' WHERE id='$userID'");
 		header("location:profile.php?user={$_GET['user']}");
@@ -188,7 +218,8 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 			$upload = $s3->putObject(array(
             'Bucket' => "phpforum",
             'Key'    => $_FILES['image']['name'],
-            'SourceFile' => $_FILES['image']['tmp_name']
+            'SourceFile' => $_FILES['image']['tmp_name'],
+						'ACL' => 'public-read'
         ));
 			$image = $upload['ObjectURL'];
 			//$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
