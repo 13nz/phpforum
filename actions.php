@@ -189,8 +189,10 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
             'Bucket' => "phpforum",
             'Key'    => $_FILES['image']['name'],
             'SourceFile' => $_FILES['image']['tmp_name'],
+						'ACL'    => 'public-read'
         ));
-			$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
+			$image = $upload['ObjectURL'];
+			//$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
 		};
 	} else {
 		array_push($_SESSION["replyError"], "Empty reply.");
