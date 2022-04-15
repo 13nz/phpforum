@@ -98,6 +98,7 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 			));
 		$image = $upload['ObjectURL'];
 	};
+	unset($_FILES['image']);
 	if (isset($_POST["title"]) && isset($_POST["body"])) {
 
 			createPost($catID, $userID, $title, $body, $image);
@@ -147,7 +148,7 @@ if(isset($_GET["editprofile"]) && $_GET["editprofile"] == 'true' && isset($_GET[
 		$image = $upload['ObjectURL'];
 
 		updateDB("UPDATE users SET avatar='$image' WHERE id='$userID'");
-
+		unset($_FILES['image']);
 
 
 		if(isset($newUsername) && preg_match('/^\w{5,}$/', $newUsername)) {
@@ -185,6 +186,7 @@ if(isset($_GET["uploadavatar"]) && $_GET["uploadavatar"] == 'true' && isset($_GE
 		$image = $upload['ObjectURL'];
 
 		updateDB("UPDATE users SET avatar='$image' WHERE id='$userID'");
+		unset($_FILES['image']);
 		header("location:profile.php?user={$_GET['user']}");
 
 	};
@@ -226,6 +228,8 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 			$image = $upload['ObjectURL'];
 			//$image = "https://phpforum.s3.eu-central-1.amazonaws.com/" . $_FILES["image"]["name"];
 		};
+
+		unset($_FILES['image']);
 	} else {
 		array_push($_SESSION["replyError"], "Empty reply.");
 		header("location:post.php?id=$postID");
