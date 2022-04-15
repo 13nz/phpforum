@@ -76,7 +76,7 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 	} else {
 		array_push($_SESSION["newPostMsg"], "No post body.");
 	};
-	if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['image'])) {
+	if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['image']) && !isset($_FILES['image']['error'])) {
 		/*
 		$target_dir = "images/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -206,7 +206,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 	};
 	if(isset($_POST["reply"]) && $_POST["reply"] !== "") {
 		$body = mysqli_real_escape_string($conn, htmlspecialchars($_POST["reply"]));
-		if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['image'])) {
+		if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['image']) && !isset($_FILES['image']['error'])) {
 			/*
 			$target_dir = "images/";
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
