@@ -35,7 +35,7 @@ if(!isset($pageTitle)) {
   <div class="container-fluid" id="header">
     <div class="row">
       <div class="col-6 col-sm-6 col-md-8 col-lg-9" id="logo">
-        <a href="index.php" style="text-decoration: none;"><h1 id="logo" class="my-3">LOGO</h1></a>
+        <a href="index.php" style="text-decoration: none;"><h1 id="logo" class="my-3">fnord</h1></a>
       </div>
       <div class="col-6 col-sm-6 col-md-4 col-lg-3" id="search">
         <form class="d-flex my-4" method="post" action="actions.php?search=site">

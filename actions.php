@@ -64,6 +64,7 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 	if(isset($_GET["cat"])) {
 		$catID = $_GET["cat"];
 		$userID = $_SESSION["userID"];
+		$image = NULL;
 	$_SESSION["newPostMsg"] = [];
 	if (isset($_POST["title"])) {
 		$title = mysqli_real_escape_string($conn, htmlspecialchars($_POST["title"]));
@@ -75,7 +76,7 @@ if(isset($_GET["newpost"]) && $_GET["newpost"] == "true") {
 	} else {
 		array_push($_SESSION["newPostMsg"], "No post body.");
 	};
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
+	if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES['image'])) {
 		/*
 		$target_dir = "images/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -194,6 +195,7 @@ if(isset($_GET["uploadavatar"]) && $_GET["uploadavatar"] == 'true' && isset($_GE
 if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 	$userID = $_SESSION["userID"];
 	$postID = $_GET["post"];
+	$image = NULL;
 	$_SESSION["replyError"] =[];
 	if($_GET["page"] == 0) {
 		$thisPage = 1;
@@ -202,7 +204,7 @@ if(isset($_GET["reply"]) && $_GET["reply"] == 'true' && isset($_GET["post"])) {
 	};
 	if(isset($_POST["reply"]) && $_POST["reply"] !== "") {
 		$body = mysqli_real_escape_string($conn, htmlspecialchars($_POST["reply"]));
-		if($_SERVER["REQUEST_METHOD"] == "POST") {
+		if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES['image'])) {
 			/*
 			$target_dir = "images/";
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
